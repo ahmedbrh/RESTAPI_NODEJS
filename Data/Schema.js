@@ -1,35 +1,28 @@
-const mongoose  = require('mongoose');  
+const mongoose = require("mongoose");
 
+const ProfileSchema = mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
 
- 
+  age: {
+    type: Number,
+    required: true,
+  },
 
-const ProfileSchema = mongoose.Schema({ 
+  height: {
+    type: Number,
+    required: true,
+  },
+  description: {
+    type: [String],
+    required: true,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
-name : {
-type: String  , 
-required : true 
-
-} , 
-
-age : {
-   type :Number ,
-   required : true  } ,  
-
-height: {
-    type: Number ,
-    required : true  
-}, 
-description  : { 
-    type:[String], 
-    required:true
-} , 
-date: {
-type:Date , 
-default : Date.now
-
-}
-
-}) ;  
-
-
-module.exports = mongoose.model('Profile' , ProfileSchema) ; 
+module.exports = mongoose.model("Profile", ProfileSchema);
