@@ -6,9 +6,10 @@ const Profile = require("../Data/Schema");
 router.get("/", async (req, res) => {
   try {
     const profile = await Profile.find(); // --find is a method by mongoose--
-    res.status(201).json(profile); // 200 means the request  being created
+    res.status(201).json(profile); // 201 means the request  being created
   } catch (error) {
-    res.status(400).json({ message: error.message }); // 400 means  bad request (malformed syntax) ; you can check the list   of the status code here https://www.restapitutorial.com/httpstatuscodes.html ; say Merci :)
+    res.status(400).json({ message: error.message });
+    // 400 means  bad request (malformed syntax) ; you can check the list of the status code here https://www.restapitutorial.com/httpstatuscodes.html ; say Merci :)
   }
 });
 
@@ -70,14 +71,13 @@ router.post("/", async (req, res) => {
   });
   try {
     const data = await ProfileUser.save();
-    res.status(201).json(data); // without curly brackets  {}  ":)"
+    res.status(201).json(data); // without curly brackets  {}
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
   // // save
   // .then(data => {
-  //   res.status(201).json(data) ;  //success
-
+  //   res.status(201).json(data) ;
   // })
   // .catch(err=> {
 

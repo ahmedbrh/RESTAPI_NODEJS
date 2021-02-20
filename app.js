@@ -10,9 +10,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/posts", postsRoute);
-app.get("/", (req, res) => {
-  res.send("hello express");
-});
+
+// app.get("/", (req, res) => {
+//   res.send("hello express");
+// });
 
 //Connecting to the database
 mongoose.connect(
