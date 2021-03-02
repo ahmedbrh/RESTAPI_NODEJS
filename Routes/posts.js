@@ -75,14 +75,6 @@ router.post("/", async (req, res) => {
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
-  // // save
-  // .then(data => {
-  //   res.status(201).json(data) ;
-  // })
-  // .catch(err=> {
-
-  // res.status(400).json({message: err.message}) ;
-  // })  ;
 });
 
 module.exports = router;
